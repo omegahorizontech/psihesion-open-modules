@@ -4,26 +4,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
+import { ImageGroupComponent } from './components/image-group/image-group.component';
 
 import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    ImageGroupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 
 export class AppModule {
   constructor(private injector: Injector) {
-    const el = createCustomElement(TableComponent, { injector });
-    customElements.define('psi-table', el);
+    const tableElement = createCustomElement(TableComponent, { injector });
+    customElements.define('psi-table', tableElement);
+
+    const imageGroupElement = createCustomElement(ImageGroupComponent, { injector });
+    customElements.define('psi-image-group', imageGroupElement);
   }
   ngDoBootstrap() {}
 }

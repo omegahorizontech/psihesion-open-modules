@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TableComponent } from './components/table/table.component';
+import { ImageGroupComponent } from './components/image-group/image-group.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,13 @@ const routes: Routes = [
     component: TableComponent,
     data: {
       header: 'Table'
+    }
+  },
+  {
+    path: 'image-group',
+    component: ImageGroupComponent,
+    data: {
+      header: 'Image Group'
     }
   },
 ];
